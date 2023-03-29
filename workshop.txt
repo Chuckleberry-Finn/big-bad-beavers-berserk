@@ -6,7 +6,7 @@ description=[h2]All combat related skills get set to 10 temporarily.[/h2]
 description=[h2]All negative moodles get supressed but still accrue until the berserk phase is complete.[/h2]
 description=
 description=
-description=[h3]Comissioned by Big Bad Beaver[/h3]
+description=[h3]Comissioned by [b][url=https://bigbadbeaver.tv/]Big Bad Beaver[/url][/b][/h3]
 description=
 description=[img]https://i.imgur.com/p7Fv1Z6.gif[/img]
 description=

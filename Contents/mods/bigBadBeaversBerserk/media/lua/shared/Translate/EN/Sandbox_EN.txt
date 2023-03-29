@@ -1,0 +1,10 @@
+Sandbox_EN = {
+    Sandbox_BerserkBeaver = "BerserkBeaver",
+    Sandbox_BerserkBeaver_message = "Berserk Message",
+    Sandbox_BerserkBeaver_minInterval = "Minimum Hours In Between Berserks",
+    Sandbox_BerserkBeaver_maxInterval = "Maximum Hours In Between Berserks",
+    Sandbox_BerserkBeaver_durationMin = "Berserk Duration Minimum in Hours",
+    Sandbox_BerserkBeaver_durationMax = "Berserk Duration Maximum in Hours",
+    Sandbox_BerserkBeaver_recoilMultiplier = "Multiplier for Berserk Recoil"
+    Sandbox_BerserkBeaver_recoilMultiplier_tooltip = "This is multiplied against accrued negative stats while berserk."
+}

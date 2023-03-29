@@ -1,0 +1,19 @@
+VERSION = 1,
+
+option BerserkBeaver.message
+{type = string, default = BERSERK, page = BerserkBeaver, translation = BerserkBeaver_message,}
+
+option BerserkBeaver.recoilMultiplier
+{type = double, min = 0.01, max = 100.00, default = 1, page = BerserkBeaver, translation = BerserkBeaver_recoilMultiplier,}
+
+option BerserkBeaver.minInterval
+{type = double, min = 0.01, max = 100.00, default = 2, page = BerserkBeaver, translation = BerserkBeaver_minInterval,}
+
+option BerserkBeaver.maxInterval
+{type = double, min = 0.01, max = 100.00, default = 3, page = BerserkBeaver, translation = BerserkBeaver_maxInterval,}
+
+option BerserkBeaver.durationMin
+{type = double, min = 0.01, max = 100.00, default = 3, page = BerserkBeaver, translation = BerserkBeaver_durationMin,}
+
+option BerserkBeaver.durationMax
+{type = double, min = 0.01, max = 100.00, default = 6, page = BerserkBeaver, translation = BerserkBeaver_durationMax,}

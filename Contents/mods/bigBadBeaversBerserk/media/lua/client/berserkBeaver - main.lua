@@ -11,7 +11,7 @@ function berserkMode.enter(player, berserkData)
     for i=1, Perks.getMaxIndex()-1 do
         ---@type PerkFactory.Perk
         local perk = Perks.fromIndex(i)
-        if perk and (perk:getParent()==Perks.Combat or perk==Perks.Aiming) and perk~=Perks.Mechanics then
+        if perk and (perk:getParent()==Perks.Combat or perk==Perks.Aiming) and perk~=Perks.Maintenance then
 
             local lvl = player:getPerkLevel(perk)
             local prevXP = (lvl > 0) and perk:getTotalXpForLevel(lvl) or 0

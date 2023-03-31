@@ -132,8 +132,9 @@ function berserkMode.update(player)
 
     elseif berserkData.timeToRage > playerHoursSurvived then
         local closeTo = berserkData.timeToRage - playerHoursSurvived
-        if closeTo <= 2 then
-            local angerLevel = (2-closeTo)/2
+        local warmUp = 3
+        if closeTo <= warmUp then
+            local angerLevel = (warmUp-closeTo)/warmUp
             local pStats = player:getStats()
             pStats:setAnger(angerLevel)
         end

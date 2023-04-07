@@ -4,7 +4,7 @@ local berserkMode = {}
 ---@param player IsoPlayer|IsoGameCharacter
 function berserkMode.enter(player, berserkData)
     berserkMode.rollNextDuration(player, berserkData)
-    player:SayShout(SandboxVars.BerserkBeaver.message)
+    player:SayShout(SandboxVars.BerserkBeaver.message or "BERSERK")
     player:getStats():setAnger(1)
     berserkData.stats = {}
     berserkData.skills = {}
@@ -99,7 +99,13 @@ function berserkMode.update(player)
     if berserkData.duration > 0.00 then
         local pStats = player:getStats()
         local anger = pStats:getAnger()
-        pStats:setAnger(anger+0.1)
+
+        if berserkData.duration > 2 then
+            pStats:setAnger(1)
+        else
+            local angerLevel = berserkData.duration/2
+            pStats:setAnger(angerLevel)
+        end
 
         if berserkData.stats then
             berserkData.stats.thirst = (berserkData.stats.thirst or 0) + (pStats:getThirst()*SandboxVars.BerserkBeaver.recoilMultiplier)
@@ -127,16 +133,17 @@ function berserkMode.update(player)
             berserkMode.exit(player, berserkData)
         end
 
-    elseif berserkData.timeToRage <= playerHoursSurvived then
+    elseif berserkData.timeToRage <= playerHoursSurvived and (not player:isAsleep()) then
         berserkMode.enter(player, berserkData)
 
     elseif berserkData.timeToRage > playerHoursSurvived then
         local closeTo = berserkData.timeToRage - playerHoursSurvived
-        local warmUp = 3
+        local warmUp = 2
         if closeTo <= warmUp then
-            local angerLevel = (warmUp-closeTo)/warmUp
+            local angerLevel = math.min(1, (warmUp-closeTo)/warmUp)*0.75
             local pStats = player:getStats()
             pStats:setAnger(angerLevel)
+
         end
     end
 end
